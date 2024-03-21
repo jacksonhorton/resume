@@ -103,9 +103,9 @@
 % Gray-scale colors
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{5D5D5D}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{darkgray}{HTML}{111111} % 333333
+\definecolor{gray}{HTML}{212121} % 5D5D5D
+\definecolor{lightgray}{HTML}{999999} % 999999
 % Basic colors
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
@@ -113,7 +113,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
+\definecolor{darktext}{HTML}{101010} % 414141
 \definecolor{custom-darkblue}{HTML}{283654}
 \definecolor{custom-blue}{HTML}{3c507a}
 \colorlet{text}{darkgray}
@@ -161,7 +161,7 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{40pt}{1em}\titlefont\color{custom-blue}\textbf{#1}}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{40pt}{1em}\titlefont\color{custom-blue}\textbf{#1}}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{russell} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{15pt}{1em}\bodyfont\scshape\color{russell} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\HeaderIconStyle}[2]{{\headerfont\color{custom-darkblue} #1\acvHeaderIconSep #2}}
@@ -429,15 +429,15 @@
     \headerfirstnamestyle{\@firstname}%
     \headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
-    %%%%% Position    
-    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%    
+    %%%%% Position
+    \vspace{0.25em}
+    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
+    %%%%%%% Address
+%    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
   \end{minipage}%
 %  \hspace{0.05\headertextwidth}%
   \begin{minipage}{0.5\headertextwidth}\begin{center}
-%%%%% Address
-%    
-%    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
-%   
+   
 %%%%% BIO LINKS
 %
     \headersocialstyle{%
